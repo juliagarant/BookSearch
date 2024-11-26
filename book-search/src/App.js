@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Let's look for a book!</h1>
+      <p>With the help of <a href="https://openlibrary.org/developers/api" target="_blank">openlibrary.org</a></p>
+      <br/>
+      <div>
+        <input id="search" placeholder='Search by title, author, etc.'/>
+        <button id="btnSearch">Search</button>
+      </div>
+      <br/>
+      <div id="results">
+        
+      </div>
     </div>
   );
 }

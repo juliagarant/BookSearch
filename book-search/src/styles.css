@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: "Karla", sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  color: white;
+  background: #1F2937;
+  
+  padding: 2rem;
+  max-width: 800px;
+  text-align: center;
+  margin: auto;
+}
+#search{
+  min-width: 250px;
+  height: 40px;
+  border: none;
+  border-radius: 2rem;
+  padding: 0 1rem;
+  margin-right: 10px;
+  font-size: inherit;
+}
+button{
+  width: 80px;
+  height: 45px;
+  background-color: darkolivegreen;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: inherit;
+}
+
+#results{
+  max-width: 800px;
+  display: flex;
+  background-color: #cdcdcd;
+  margin: auto;
+  min-height: 200px;
+  border-radius: 1rem;
+}
