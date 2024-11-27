@@ -69,8 +69,18 @@ function App() {
     "Cross-Origin Request Blocked", "NetworkError when attempting to fetch resource."
     */ 
     let searchInput = document.getElementById("search");    
+    let load = document.getElementById("loading")
 
     try{
+      // Loading appearance with Hide and display of spinning book
+      if (load.style.display === "none" || load.style.display === "") {
+        load.style.display = "block";
+    
+        setTimeout(() => {
+          load.style.display = "none";
+        }, 8000);
+      }
+
       // fetch('https://openlibrary.org//search.json?q='+ searchInput.value)
       fetch('https://cors-anywhere.herokuapp.com/https://openlibrary.org//search.json?q='+ searchInput.value)
       .then(response => response.json())
@@ -98,8 +108,7 @@ function App() {
         <div id="loading">
           <img src="/imgs/SpinningBook.gif" />
         </div>
-        <div id="top">
-        </div>
+        <div id="top"></div>
         <div id="results">
 
         </div>
