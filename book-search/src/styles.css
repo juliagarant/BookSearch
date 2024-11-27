@@ -28,6 +28,7 @@ button{
   border: none;
   border-radius: 10px;
   font-size: inherit;
+  cursor: pointer;
 }
 
 #results{

@@ -2,6 +2,7 @@ import './styles.css'
 
 let searchInput = document.getElementById("search")
 let resultsOutput = document.getElementById("results")
+
 /*
 Using 
   https://cors-anywhere.herokuapp.com/corsdemo
@@ -14,10 +15,16 @@ function App() {
 
   function displayBooks(data){
     for (let i = 0; i < 10; i++) {
-      // const element = array[i];
+      console.log(data.docs[i]); 
+      // resultsOutput.innerHTML += `<div id=\"book\"> Test ${i} </div>`
+      resultsOutput.innerHTML += 
+        `<div id=\"book\"> 
+          <h2> ${data.docs[i].title} </h2>
+          <br/>
+          <i>${data.docs[i].author_name},</i>
+          Published in: ${data.docs[i].first_publish_year}  
+        </div>`
 
-      resultsOutput.innerHTML += `<div id=\"book\"> Test ${i} </div>`
-      console.log(data)
 
     }
   }
@@ -28,10 +35,7 @@ function App() {
     .then(response => response.json())
     // .then(data => console.log(data));
     .then(data => displayBooks(data));
-  }
-
-  function handleClick(){
-    console.log("here")
+    console.log("search book")
   }
 
   return (
@@ -43,7 +47,8 @@ function App() {
         <input id="search" placeholder='Search by title, author, etc.'/>
         <button onClick={searchBook} id="btnSearch">Search</button>
         {/* <button onClick={handleClick} id="btnSearch">Search</button> */}
-
+        {console.log("searchInput: ")}
+        {console.log(searchInput)}
       </div>
       <br/>
       <div id="results">
