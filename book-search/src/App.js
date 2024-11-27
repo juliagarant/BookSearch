@@ -14,25 +14,17 @@ function App() {
 
     for (let i = 0; i < 10; i++) {
       console.log(data.docs[i].cover_i, data.docs[i].title, data.docs[i].author_name, data.docs[i].first_publish_year); 
-      // resultsOutput.innerHTML += `<div id=\"book\"> Test ${i} </div>`
+
       resultsOutput.innerHTML += 
         `<div id="book"> 
-          <img id="bookCover" src="${loadCover(data.docs[i].cover_i)}" />
+          <img id="bookCover" src="https://covers.openlibrary.org/b/id/${data.docs[i].cover_i}-M.jpg" />
           <h2> ${data.docs[i].title} </h2>
           <br/>
           <i>${data.docs[i].author_name},</i>
-          First published in: ${data.docs[i].first_publish_year}  
+          First published in ${data.docs[i].first_publish_year}  
         </div>`
 
-
     }
-  }
-  function loadCover(cover_i){
-    
-    fetch('https://covers.openlibrary.org/b/id/'+ {cover_i} + '-M.jpg')
-    .then(response => response.json())
-    .then(data => console.log(data));
-    // .then(data => displayBooks(data));
   }
 
   function searchBook(){
@@ -60,7 +52,7 @@ function App() {
       </div>
       <br/>
       <div id="results">
-        
+        <p>Top 10 results:</p>
       </div>
     </div>
   );
