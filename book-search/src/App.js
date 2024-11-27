@@ -21,13 +21,14 @@ function App() {
           if (isNaN(data.docs[i].cover_i)) {
             html += `<img id="bookCover" src="/imgs/cover-not-found.png" alt="Cover not found" />`;
           } else {
-            html += `<img id="bookCover" src="https://covers.openlibrary.org/b/id/${data.docs[i].cover_i}-M.jpg" />`;
+            html += `<img id="bookCover" src="https://covers.openlibrary.org/b/id/${data.docs[i].cover_i}-M.jpg" alt="The cover of ${data.docs[i].title}"/>`;
           }
 
           html += `
             <h3>${data.docs[i].title}</h3>
-            <i>${data.docs[i].author_name[0]},</i>
-            First published in ${data.docs[i].first_publish_year}
+            <p><i>${data.docs[i].author_name[0]}</i></p>
+            <p>First published in ${data.docs[i].first_publish_year}</p>
+            <p id="key">Open Library Key: ${data.docs[i].key}</p>
             </div>`;
 
           resultsOutput.innerHTML += html;
@@ -43,7 +44,7 @@ function App() {
           if (isNaN(data.docs[i].cover_i)) {
             html += `<img id="bookCover" src="/imgs/cover-not-found.png" alt="Cover not found" />`;
           } else {
-            html += `<img id="bookCover" src="https://covers.openlibrary.org/b/id/${data.docs[i].cover_i}-M.jpg" />`;
+            html += `<img id="bookCover" src="https://covers.openlibrary.org/b/id/${data.docs[i].cover_i}-M.jpg" alt="The cover of ${data.docs[i].title}"/>`;
           }
 
           html += `
