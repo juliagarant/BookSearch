@@ -31,19 +31,40 @@ button{
   cursor: pointer;
 }
 
-#results{
-  display: flex;
-  flex-wrap: wrap;
+.App a{
+  color: #fff !important;
+}
+
+#errorBlock{
+  color: #fff
+}
+
+#background{
   background-color: #cdcdcd;
+  color: #000;
   margin: auto;
   padding: 1rem;
-  max-width: 800px;
+  max-width: 1000px;
   min-height: 200px;
   border-radius: 1rem;
 }
+
+#results{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#top{
+  flex-direction: column;
+}
+
 #book{
-  color: #000;
+  color: inherit;
   padding: 1rem;
   min-width: 100px;
+  max-width: 250px;
   margin: auto;
+}
+#bookCover {
+  max-height: 200px;
 }
