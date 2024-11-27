@@ -1,8 +1,4 @@
 import './styles.css'
-
-let searchInput = document.getElementById("search")
-let resultsOutput = document.getElementById("results")
-
 /*
 Using 
   https://cors-anywhere.herokuapp.com/corsdemo
@@ -14,15 +10,17 @@ for CORS error that appears on local testing.
 function App() {
 
   function displayBooks(data){
+    let resultsOutput = document.getElementById("results")
+    
     for (let i = 0; i < 10; i++) {
       console.log(data.docs[i]); 
       // resultsOutput.innerHTML += `<div id=\"book\"> Test ${i} </div>`
       resultsOutput.innerHTML += 
-        `<div id=\"book\"> 
+        `<div id="book"> 
           <h2> ${data.docs[i].title} </h2>
           <br/>
           <i>${data.docs[i].author_name},</i>
-          Published in: ${data.docs[i].first_publish_year}  
+          First published in: ${data.docs[i].first_publish_year}  
         </div>`
 
 
@@ -30,6 +28,10 @@ function App() {
   }
 
   function searchBook(){
+    let searchInput = document.getElementById("search");
+    {console.log("searchInput: ")}
+    {console.log(searchInput)}
+
     // fetch('https://openlibrary.org//search.json?q='+ searchInput.value)
     fetch('https://cors-anywhere.herokuapp.com/https://openlibrary.org//search.json?q='+ searchInput.value)
     .then(response => response.json())
@@ -44,11 +46,9 @@ function App() {
       <p>With the help of <a href="https://openlibrary.org/developers/api" target="_blank">openlibrary.org</a></p>
       <br/>
       <div>
-        <input id="search" placeholder='Search by title, author, etc.'/>
+        <input id="search" type="text" placeholder='Search by title, author, etc.'/>
         <button onClick={searchBook} id="btnSearch">Search</button>
         {/* <button onClick={handleClick} id="btnSearch">Search</button> */}
-        {console.log("searchInput: ")}
-        {console.log(searchInput)}
       </div>
       <br/>
       <div id="results">
