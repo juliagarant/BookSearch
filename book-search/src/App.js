@@ -1,21 +1,33 @@
 import './styles.css'
 
 let searchInput = document.getElementById("search")
+let resultsOutput = document.getElementById("results")
 /*
 Using 
   https://cors-anywhere.herokuapp.com/corsdemo
 for CORS error that appears on local testing.
-""
-"NetworkError when attempting to fetch resource."
+"Cross-Origin Request Blocked", "NetworkError when attempting to fetch resource."
 */ 
 
 
 function App() {
+
+  function displayBooks(data){
+    for (let i = 0; i < 10; i++) {
+      // const element = array[i];
+
+      resultsOutput.innerHTML += `<div id=\"book\"> Test ${i} </div>`
+      console.log(data)
+
+    }
+  }
+
   function searchBook(){
     // fetch('https://openlibrary.org//search.json?q='+ searchInput.value)
     fetch('https://cors-anywhere.herokuapp.com/https://openlibrary.org//search.json?q='+ searchInput.value)
     .then(response => response.json())
-    .then(data => console.log(data));
+    // .then(data => console.log(data));
+    .then(data => displayBooks(data));
   }
 
   function handleClick(){

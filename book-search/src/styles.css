@@ -31,10 +31,18 @@ button{
 }
 
 #results{
-  max-width: 800px;
   display: flex;
+  flex-wrap: wrap;
   background-color: #cdcdcd;
   margin: auto;
+  padding: 1rem;
+  max-width: 800px;
   min-height: 200px;
   border-radius: 1rem;
+}
+#book{
+  color: #000;
+  padding: 1rem;
+  min-width: 100px;
+  margin: auto;
 }
