@@ -1,9 +1,19 @@
 import './styles.css'
 
+let searchInput = document.getElementById("search")
+/*
+Using 
+  https://cors-anywhere.herokuapp.com/corsdemo
+for CORS error that appears on local testing.
+""
+"NetworkError when attempting to fetch resource."
+*/ 
+
 
 function App() {
   function searchBook(){
-    fetch('https://openlibrary.org/api/books?bibkeys=ISBN%3A0201558025&format=json&jscmd=viewapi')
+    // fetch('https://openlibrary.org//search.json?q='+ searchInput.value)
+    fetch('https://cors-anywhere.herokuapp.com/https://openlibrary.org//search.json?q='+ searchInput.value)
     .then(response => response.json())
     .then(data => console.log(data));
   }
