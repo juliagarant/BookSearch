@@ -1,10 +1,21 @@
-# Getting Started with Create React App
+# BookSearch - How to run
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How to run
 
-## Available Scripts
+### `git clone`
+Download the code and `git clone` into your desired directory
 
-In the project directory, you can run:
+### `cd BookSearch`
+Move into the first folder of BookSearch. Next move to the second folder.
+
+### `cd book-search`
+The second folder was created with [Create React App](https://github.com/facebook/create-react-app).
+
+### `npm install`
+Make sure you have the appropriate requirements installed
+
+### Aside open your browser to [https://cors-anywhere.herokuapp.com/corsdemo](https://cors-anywhere.herokuapp.com/corsdemo)
+Click the button to request access to the demo server. Without this you will get some errors regarding CORS security. For development purposes only,
 
 ### `npm start`
 
@@ -13,15 +24,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
