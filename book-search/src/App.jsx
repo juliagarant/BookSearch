@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './styles.css';
 
 function App() {
-  const [searchInput, setSearchInput] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
   const [books, setBooks] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -125,6 +125,7 @@ function App() {
       // const response = await fetch(`https://cors-anywhere.herokuapp.com/https://openlibrary.org//search.json?q=${searchInput}&page=1&limit=10`);
       console.log("Search book")
       const data = await response.json();
+      console.log(data)
       displayBooks(data);
       // setBooks(data.docs.slice(0, 10));
     } catch (err) {
@@ -141,7 +142,12 @@ function App() {
       <p>With the help of <a href="https://openlibrary.org/developers/api" target="_blank">openlibrary.org</a></p>
       <br/>
       <div>
-        <input id="search" type="text" placeholder='Search by title, author, etc.'/>
+        <input 
+          id="search" 
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)} 
+          placeholder='Search by title, author, etc.'
+        />
         <button onClick={searchBook} id="btnSearch">Search</button>
       </div>
       <br/>      
